@@ -6,7 +6,7 @@
 /*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 19:35:08 by npolack           #+#    #+#             */
-/*   Updated: 2024/10/08 21:06:00 by npolack          ###   ########.fr       */
+/*   Updated: 2024/10/17 11:31:21 by npolack          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ void	*ft_memset(void *s, int c, size_t n)
 	char	*dest;
 
 	dest = s;
-	i = -1;
-	while (++i < n)
+	i = 0;
+	while (i < n)
+	{
 		*(dest + i) = c;
+		i++;
+	}
 	return (s);
 }

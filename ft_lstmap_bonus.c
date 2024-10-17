@@ -6,7 +6,7 @@
 /*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 13:50:18 by npolack           #+#    #+#             */
-/*   Updated: 2024/10/15 21:06:29 by npolack          ###   ########.fr       */
+/*   Updated: 2024/10/17 12:08:19 by npolack          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		ft_lstadd_back(&head, new);
 		lst = lst->next;
 	}
-	new->next = NULL;
 	return (head);
 }

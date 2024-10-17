@@ -6,7 +6,7 @@
 /*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 13:16:15 by npolack           #+#    #+#             */
-/*   Updated: 2024/10/16 19:15:09 by npolack          ###   ########.fr       */
+/*   Updated: 2024/10/17 11:46:36 by npolack          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	len;
 
-	len = 0;
-	while (src[len])
-		len++;
+	len = ft_strlen(src);
 	if (len + 1 <= size)
 	{
 		ft_memmove(dst, src, len);

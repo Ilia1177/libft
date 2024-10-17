@@ -6,7 +6,7 @@
 /*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 18:19:53 by npolack           #+#    #+#             */
-/*   Updated: 2024/10/15 22:15:01 by npolack          ###   ########.fr       */
+/*   Updated: 2024/10/17 11:57:48 by npolack          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	tlen = ft_strlen(s1);
 	tlen += ft_strlen(s2);
-	dest = ft_calloc(tlen + 1, sizeof (char));
+	dest = (char *)ft_calloc(tlen + 1, sizeof (char));
 	if (!dest)
 		return (0);
 	ft_strlcpy(dest, s1, ft_strlen(s1) + 1);

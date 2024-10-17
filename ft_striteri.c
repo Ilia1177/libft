@@ -6,13 +6,13 @@
 /*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 14:29:23 by npolack           #+#    #+#             */
-/*   Updated: 2024/10/16 19:13:23 by npolack          ###   ########.fr       */
+/*   Updated: 2024/10/17 11:59:43 by npolack          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int		i;
+	unsigned int	i;
 
 	if (!s || !f)
 		return ;

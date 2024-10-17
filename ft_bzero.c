@@ -6,7 +6,7 @@
 /*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:27:57 by npolack           #+#    #+#             */
-/*   Updated: 2024/10/16 19:06:30 by npolack          ###   ########.fr       */
+/*   Updated: 2024/10/17 11:30:24 by npolack          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*dest;
-
-	dest = s;
-	i = 0;
-	ft_memset(s, 0, n);
+	ft_memset(s, '\0', n);
 }
