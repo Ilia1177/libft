@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   main_test.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npolack <npolack@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 12:35:20 by npolack           #+#    #+#             */
-/*   Updated: 2024/12/07 12:35:29 by npolack          ###   ########.fr       */
+/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/03/12 20:57:08 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isspace(int c)
+#include "../include/libft.h"
+
+int	main(int ac, char **av)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
+	if (ac <= 1)
+	{
+		(void)av;
+		return (0);
+	}
+	ft_printf("empty main test in srcs\n");
 	return (0);
 }
