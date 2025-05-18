@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_expf.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npolack <npolack@student.42.fr>            +#+  +:+       +#+        */
+/*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 12:35:20 by npolack           #+#    #+#             */
-/*   Updated: 2024/12/07 12:35:29 by npolack          ###   ########.fr       */
+/*   Created: 2025/04/10 12:03:32 by npolack           #+#    #+#             */
+/*   Updated: 2025/04/14 16:24:55 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+float	ft_expf(float x)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	return (0);
+	float	result;
+	float	term;
+	int		i;
+
+	result = 1.0f;
+	term = 1.0f;
+	i = 1;
+	while (i < 50)
+	{
+		term *= x / i;
+		result += term;
+		if (term < 1e-6f && term > -1e-6f)
+			break ;
+		i++;
+	}
+	return (result);
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   matrix_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npolack <npolack@student.42.fr>            +#+  +:+       +#+        */
+/*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 12:35:20 by npolack           #+#    #+#             */
-/*   Updated: 2024/12/07 12:35:29 by npolack          ###   ########.fr       */
+/*   Created: 2025/04/10 13:10:37 by npolack           #+#    #+#             */
+/*   Updated: 2025/05/07 12:57:22 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+#include "../../include/matrix.h"
+
+t_mat4	mat_init_id(void)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	return (0);
+	t_mat4	id;
+
+	id.i = (t_vec4){1, 0, 0, 0};
+	id.j = (t_vec4){0, 1, 0, 0};
+	id.k = (t_vec4){0, 0, 1, 0};
+	id.p = (t_vec4){0, 0, 0, 1};
+	return (id);
 }

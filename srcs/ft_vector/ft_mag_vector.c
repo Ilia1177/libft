@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   ft_mag_vector.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/04/14 17:46:55 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/04/14 17:49:29 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/vector.h"
+#include "../../include/libft.h"
 
-int	main(int ac, char **av)
+float	mag_vec4(t_vec4 a)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	float	result;
+
+	result = sqrt(pow(a.x, 2) + pow(a.y, 2) + pow(a.z, 2));
+	return (result);
+}
+
+float	mag_vec3(t_vec3 a)
+{
+	float	result;
+
+	result = sqrt(pow(a.x, 2) + pow(a.y, 2) + pow(a.z, 2));
+	return (result);
 }

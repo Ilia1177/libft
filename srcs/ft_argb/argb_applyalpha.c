@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   argb_applyalpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/05/16 15:13:43 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/05/16 15:13:45 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/ft_argb.h"
 
-int	main(int ac, char **av)
+t_argb	argb_applyalpha(t_argb color)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	const float	brightness = (float)color.a / 255;
+	t_argb		real_color;
+
+	real_color.a = 255;
+	real_color.r = color.r * brightness;
+	real_color.g = color.g * brightness;
+	real_color.b = color.b * brightness;
+	return (real_color);
 }

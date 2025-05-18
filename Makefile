@@ -6,7 +6,7 @@
 #    By: npolack <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 10:27:51 by npolack           #+#    #+#              #
-#    Updated: 2025/03/12 19:36:54 by npolack          ###   ########.fr        #
+#    Updated: 2025/04/14 19:06:40 by jhervoch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,33 @@ SRCS		=	ft_printf/ft_printf.c\
 				ft_printf/ft_parse.c\
 				ft_printf/get_intlen.c\
 				get_next_line/get_next_line_bonus.c\
-				get_next_line/get_next_line_utils_bonus.c
+				get_next_line/get_next_line_utils_bonus.c\
+				ft_vector/ft_cross_vector.c\
+				ft_vector/ft_dist_vector.c\
+				ft_vector/ft_div_vector.c\
+				ft_vector/ft_dot_vector.c\
+				ft_vector/ft_mag_vector.c\
+				ft_vector/ft_mult_vector.c\
+				ft_vector/ft_normalize_vector.c\
+				ft_vector/ft_sub_vector.c\
+				ft_vector/ft_add_vector.c\
+				matrix/mat_adjugate.c\
+				matrix/mat_apply.c\
+				matrix/mat_compose.c\
+				matrix/mat_init.c\
+				matrix/mat_inverse.c\
+				matrix/mat_orthogonal.c\
+				matrix/mat_transform.c\
+				matrix/mat_transpose.c\
+				ft_argb/argb_toint.c\
+				ft_argb/argb_ease.c\
+				ft_argb/argb_clamp.c\
+				ft_argb/argb_mult.c\
+				ft_argb/argb_add.c\
+				ft_argb/argb_inverse.c\
+				ft_argb/argb_fromint.c\
+				ft_argb/argb_applyalpha.c\
+				ft_utils/ft_clamp.c
 
 SRCS 		:= $(addprefix $(SRCS_DIR)/, $(SRCS))
 OBJS		=	$(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
@@ -55,9 +81,9 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 test	: $(TEST_OBJS) $(NAME) 
-		$(CC) $(CFLAGS) $(TEST_OBJS) $(NAME) -Lbin -lft -o test
+		$(CC) $(CFLAGS) $(TEST_OBJS) $(NAME) -Lbin -lft -lm -o test
 		
-clean	:	
+clean	:
 			rm -f test
 			make clean -C srcs
 

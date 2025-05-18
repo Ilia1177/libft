@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npolack <npolack@student.42.fr>            +#+  +:+       +#+        */
+/*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 12:35:20 by npolack           #+#    #+#             */
-/*   Updated: 2024/12/07 12:35:29 by npolack          ###   ########.fr       */
+/*   Created: 2024/09/12 22:24:47 by npolack           #+#    #+#             */
+/*   Updated: 2025/04/14 16:53:07 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+#include "../../include/libft.h"
+
+float	ft_powf(float base, float exponent)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	return (0);
+	if (base <= 0.0f)
+		return (-1.0f);
+	return (ft_expf(exponent * ft_logf(base)));
 }

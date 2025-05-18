@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   argb_fromint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/05/16 15:14:09 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/05/16 15:14:11 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/ft_argb.h"
 
-int	main(int ac, char **av)
+t_argb	argb_fromint(int color)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	t_argb	argb_color;
+
+	argb_color.a = (color >> 24) & 0xFF;
+	argb_color.r = (color >> 16) & 0xFF;
+	argb_color.g = (color >> 8) & 0xFF;
+	argb_color.b = color & 0xFF;
+	return (argb_color);
 }

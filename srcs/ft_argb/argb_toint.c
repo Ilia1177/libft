@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   argb_toint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/05/16 15:14:29 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/05/16 15:14:30 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/ft_argb.h"
 
-int	main(int ac, char **av)
+uint32_t	argb_toint(t_argb color)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	const uint32_t	alpha = color.a;
+	const uint32_t	red = color.r;
+	const uint32_t	green = color.g;
+	const uint32_t	blue = color.b;
+
+	return (alpha << 24 | red << 16 | green << 8 | blue);
 }

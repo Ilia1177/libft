@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   mat_compose.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npolack <npolack@student.42.fr>            +#+  +:+       +#+        */
+/*   By: npolack <npolack@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 12:35:20 by npolack           #+#    #+#             */
-/*   Updated: 2024/12/07 12:35:29 by npolack          ###   ########.fr       */
+/*   Created: 2025/05/12 14:54:37 by npolack           #+#    #+#             */
+/*   Updated: 2025/05/12 14:54:39 by npolack          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+#include "../../include/matrix.h"
+
+t_mat4	mat_compose(t_mat4 m1, t_mat4 m2)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
-		return (1);
-	return (0);
+	t_mat4			res;
+
+	res.i = mat_apply(m1, m2.i);
+	res.j = mat_apply(m1, m2.j);
+	res.k = mat_apply(m1, m2.k);
+	res.p = mat_apply(m1, m2.p);
+	return (res);
 }

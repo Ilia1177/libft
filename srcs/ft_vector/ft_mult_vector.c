@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   ft_mult_vector.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/04/14 17:51:25 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/04/14 17:53:18 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/vector.h"
 
-int	main(int ac, char **av)
+t_vec4	mult_vec4(t_vec4 vec, float a)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	t_vec4	result;
+
+	result.x = vec.x * a;
+	result.y = vec.y * a;
+	result.z = vec.z * a;
+	result.w = vec.w;
+	return (result);
+}
+
+t_vec3	mult_vec3(t_vec3 vec, float a)
+{
+	t_vec3	result;
+
+	result.x = vec.x * a;
+	result.y = vec.y * a;
+	result.z = vec.z * a;
+	return (result);
 }

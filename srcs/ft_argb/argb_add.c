@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   argb_add.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/05/16 15:13:21 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/05/16 15:13:29 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/ft_argb.h"
 
-int	main(int ac, char **av)
+t_argb	argb_add(t_argb color1, t_argb color2)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	t_argb			result;
+
+	result.a = color1.a + color2.a;
+	result.r = color1.r + color2.r;
+	result.g = color1.g + color2.g;
+	result.b = color1.b + color2.b;
+	argb_clamp(&result);
+	return (result);
 }

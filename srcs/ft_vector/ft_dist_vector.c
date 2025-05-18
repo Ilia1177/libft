@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   ft_dist_vector.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/04/14 15:04:36 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/04/14 17:39:30 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/vector.h"
+#include <math.h>
 
-int	main(int ac, char **av)
+float	dist_vec3(t_vec3 p1, t_vec3 p2)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	return (sqrtf((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y)
+			* (p2.y - p1.y) + (p2.z - p1.z) * (p2.z - p1.z)));
+}
+
+float	dist_vec4(t_vec4 p1, t_vec4 p2)
+{
+	float	dist;
+
+	dist = (p2.x - p1.x) * (p2.x - p1.x)
+		+ (p2.y - p1.y) * (p2.y - p1.y) + (p2.z - p1.z) * (p2.z - p1.z);
+	return (sqrtf(dist));
 }

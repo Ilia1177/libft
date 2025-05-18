@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   ft_dot_vector.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/04/14 17:44:38 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/04/14 17:45:52 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/vector.h"
 
-int	main(int ac, char **av)
+float	dot_vec3(t_vec4 a, t_vec4 b)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	float	result;
+
+	result = a.x * b.x + a.y * b.y + a.z * b.z;
+	return (result);
+}
+
+float	dot_vec4(t_vec4 a, t_vec4 b)
+{
+	float	result;
+
+	result = a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w;
+	return (result);
 }

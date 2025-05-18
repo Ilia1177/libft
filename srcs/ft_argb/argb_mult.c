@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_test.c                                        :+:      :+:    :+:   */
+/*   argb_mult.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/12 20:53:33 by jhervoch          #+#    #+#             */
-/*   Updated: 2025/04/14 16:51:15 by jhervoch         ###   ########.fr       */
+/*   Created: 2025/05/16 15:14:24 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/05/16 15:14:25 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../../include/ft_argb.h"
 
-int	main(int ac, char **av)
+t_argb	argb_mult(t_argb color, t_argb factor)
 {
-	if (ac <= 0)
-	{
-		(void)av;
-		return (0);
-	}
-	ft_printf("write your test in srcs/main_test.c\n");
-	return (0);
+	t_argb	result;
+
+	result.a = color.a * (factor.a / 255.0);
+	result.r = color.r * (factor.r / 255.0);
+	result.g = color.g * (factor.g / 255.0);
+	result.b = color.b * (factor.b / 255.0);
+	argb_clamp(&result);
+	return (result);
 }

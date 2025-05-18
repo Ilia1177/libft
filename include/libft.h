@@ -6,7 +6,7 @@
 /*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:35:12 by npolack           #+#    #+#             */
-/*   Updated: 2024/10/30 20:54:12 by npolack          ###   ########.fr       */
+/*   Updated: 2025/05/08 14:48:55 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 # include <limits.h>
 # include <stdlib.h>
 # include "ft_printf.h"
+# include "ft_argb.h"
 # include "get_next_line_bonus.h"
+# include "ft_math.h"
+# include "matrix.h"
 
 ///////////// PART 1 ///////////////////////////////////////////////////////////
 
@@ -58,8 +61,6 @@ int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 
-//added after moulinette
-float	ft_strtof(char *str, char **end);
 ///////////// PART 2 ///////////////////////////////////////////////////////////
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
@@ -84,13 +85,17 @@ typedef struct s_list
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *newlst);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *newlst);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+//added after moulinette (in ft_utils)
+float	ft_strtof(char *str, char **end);
+float	ft_clampf(float f, float min, float max);
+int		ft_clamp(int num, int min, int max);
 #endif

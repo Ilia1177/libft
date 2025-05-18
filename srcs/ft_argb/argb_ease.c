@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen.c                                       :+:      :+:    :+:   */
+/*   argb_ease.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: npolack <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: jhervoch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 09:31:24 by npolack           #+#    #+#             */
-/*   Updated: 2024/11/19 09:34:43 by npolack          ###   ########.fr       */
+/*   Created: 2025/05/16 15:13:57 by jhervoch          #+#    #+#             */
+/*   Updated: 2025/05/16 15:13:59 by jhervoch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strnlen(const char *str, int c)
-{
-	char	*start;
+#include "../../include/ft_argb.h"
 
-	start = (char *)str;
-	while (*str && *str != c)
-		str++;
-	return (str - start);
+t_argb	argb_ease(t_argb color, uint8_t ease)
+{
+	t_argb	result;
+
+	result.a = ease - color.a;
+	result.r = ease - color.r;
+	result.g = ease - color.g;
+	result.b = ease - color.b;
+	argb_clamp(&result);
+	return (color);
 }
